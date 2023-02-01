@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <h1></h1>
+    <div class="row">
+      <%- include('addbutton'); -%>
+    <% for(var i=0; i < categories.length; i++) { %>
+    <div class="col-lg-3">
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+      <div class="card-header"></div>
+      <div class="card-body"  data-id = <%= categories[i]['_id'] %> >
+        <h4 class="card-title"><%= categories[i]['name'] %></h4>
+        <a href="/dishes?cid=<%= categories[i]['_id'] %>"><p class="card-text" style="cursor: pointer;"><img class="category-img" src="<%= categories[i]['icon'] %>"></p></a>
+      </div>
+    </div>
+  </div>
+    <% } %>
+      
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <!-- <script src="/javascripts/custom.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  </head>
+  <body>
+    <h1><a href="/" style="text-decoration: none;"><%= title %></a></h1>
+    <div class="row">
+      <form method="post" name="registration" id="registration">
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label mt-4">Username</label>
+            <input type="text" class="form-control" name="name" id="user_name" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control" name="email" id="user_email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+          </div>
+          <div class="form-group pb-3">
+            <label for="exampleInputPassword1" class="form-label mt-4">Confirm Password</label>
+            <input type="password" class="form-control" name="confirmPassword" id="cnfpassword" placeholder="Confirm Password">
+          </div>
+          <button type="button" id="reg-btn" class="btn btn-primary">Register</button>
+          
+        </fieldset>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="/javascripts/custom.js"></script>
+  </body>
+</html>

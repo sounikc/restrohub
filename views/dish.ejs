@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <h1></h1>
+    <div class="alert alert-dismissible alert-warning addmsgdiv" style="display: none;">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Well done!</strong> <span id="msg"></span><a href="/" class="alert-link">More Dishes</a>.
+    </div>
+    <div class="alert alert-dismissible alert-danger delmsgdiv" style="display: none;">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Alert!</strong> <span id="delmsg"></span><a href="/" class="alert-link">More Dishes</a>.
+    </div>
+    <table class="table table-hover">
+      <thead></thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col"></th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < dishes.length; i++) { %>
+        <tr>
+          
+            <th scope="row"> <% if(dishes[i]['inStock']) { %>
+              <img src="/images/check.png" title="Available">
+           <% }  else { %>
+              <img src="/images/unavailable.png" title="Unavailable">
+           <% } %> <%= dishes[i]['name'] %></th>
+            <td><%= dishes[i]['price'] %></td>
+            <td><img src="/images/<%= dishes[i]['genre'] %>.png" width="30" height="30"></td>
+            <td><a href="/dishes/edit/<%= dishes[i]['_id'] %>"><img src="/images/edit.png"></a> | <a href="javascript:void(0);" data-id="<%= dishes[i]['_id'] %>" class="delete-action"><img src="/images/delete.png"></a></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/javascripts/custom.js"></script>
+  </body>
+</html>

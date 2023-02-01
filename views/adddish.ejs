@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  </head>
+  <body>
+    <%- include('navbar'); -%>
+    <h1></h1>
+    <div class="alert alert-dismissible alert-success addmsgdiv" style="display: none;">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Well done!</strong> <span id="msg"></span><a href="/" class="alert-link">More Dishes</a>.
+    </div>
+    <form method="post" id="adddishform">
+      <fieldset>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Dish Name: </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" name="name" id="name" placeholder="Dish name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Price: </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" name="price" id="price" placeholder="Dish price">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="category" class="form-label mt-4">Select Category: </label>
+          <select class="form-select" name="cid" id="category">
+            <% for(var i=0; i < categories.length; i++) { %>
+            <option value="<%= categories[i]['_id'] %>"> <%= categories[i]['name'] %></option>
+            <% } %>
+          </select>
+        </div>
+        <legend class="mt-4">Genre:</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="genre" class="genre" value="veg" checked="">
+          <label class="form-check-label" for="optionsRadios1">
+            Veg
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="genre" class="genre" value="non-veg">
+          <label class="form-check-label" for="optionsRadios2">
+            Non-Veg
+          </label>
+        </div>
+        <Button type="button" class="btn btn-primary adddishbtn">Submit</button>
+      </fieldset>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script src="/javascripts/custom.js"></script>
+  </body>
+</html>

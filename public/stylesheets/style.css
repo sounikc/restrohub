@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background-image: url("../images/Body-Bckgrnd.jpg"); */
+  /* background-position: center; Center the image */
+  /* background-repeat: no-repeat; Do not repeat the image */
+  /* background-size: cover; Resize the background image to cover the entire container */
+  
+}
+a {
+  color: #00B7FF;
+}
+
+.category-img{
+  height: 150px;
+  width: 100%;
+}
